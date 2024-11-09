@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngFor="let contact of contacts">
+    <div class="card">
+      <h3>{{ contact.name }}</h3>
+      <div class="card-content">
+        <div>
+          <p class="card-phone">
+            <span>Telefone: </span>{{ contact.phone | phone }}
+          </p>
+          <p><span>E-mail: </span>{{ contact.email }}</p>
+        </div>
+        <button class="button-15" (click)="deleteContact(contact.id)">
+          Excluir
+        </button>
+      </div>
+      <div class="card-links">
+        <a [routerLink]="['/detail', contact.id]">Detalhes</a>
+        <a [routerLink]="['/edit', contact.id]">Editar</a>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a class="page-link" [routerLink]="['/add']">Cadastrar novo contato</a>
+  </div>
+</div>

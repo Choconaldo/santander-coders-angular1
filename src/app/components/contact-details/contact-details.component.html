@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Detalhes do contato</h2>
+  <div class="card">
+    <div class="card-content" *ngIf="contact">
+      <h3>{{ contact.name }}</h3>
+      <p><span>E-mail: </span>{{ contact.email }}</p>
+      <p><span>Telefone: </span>{{ contact.phone | phone }}</p>
+      <p>
+        <span>Endereço: </span>{{ contact.adress }}, {{ contact.number
+        }}<span class="complement" *ngIf="contact.complement"
+          >, {{ contact.complement }}</span
+        >
+      </p>
+      <p><span>Bairro: </span>{{ contact.neighborhood }}</p>
+      <p><span>Cidade: </span>{{ contact.city }}</p>
+      <p><span>Estado: </span>{{ contact.state }}</p>
+      <p><span>CEP: </span>{{ contact.cep | cep }}</p>
+    </div>
+  </div>
+
+  <div><a class="page-link" [routerLink]="['']">Voltar</a></div>
+</div>
