@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormControl,
@@ -12,12 +12,42 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-contact-add',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, RouterLink],
+  imports: [ReactiveFormsModule, NgIf, RouterLink, NgFor],
   templateUrl: './contact-add.component.html',
   styleUrl: './contact-add.component.css',
 })
 export class ContactAddComponent {
   constructor(private _router: Router) {}
+
+  states = [
+    'AC',
+    'AL',
+    'AP',
+    'AM',
+    'BA',
+    'CE',
+    'DF',
+    'ES',
+    'GO',
+    'MA',
+    'MT',
+    'MS',
+    'MG',
+    'PA',
+    'PB',
+    'PR',
+    'PE',
+    'PI',
+    'RJ',
+    'RN',
+    'RS',
+    'RO',
+    'RR',
+    'SC',
+    'SP',
+    'SE',
+    'TO',
+  ];
 
   localStorageService = inject(LocalStorageService);
   form!: FormGroup;

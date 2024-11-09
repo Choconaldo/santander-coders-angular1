@@ -66,8 +66,13 @@
   </div>
   <div class="form-group">
     <label
-      >Estado:* <input type="text" name="state" formControlName="state"
-    /></label>
+      >UF:*
+      <select type="text" name="state" formControlName="state">
+        <option *ngFor="let state of states" value="{{ state }}">
+          {{ state }}
+        </option>
+      </select></label
+    >
     <span *ngIf="state!.invalid" class="alert">
       <span *ngIf="state!.errors?.['required']"> Campo obrigatório </span>
     </span>
@@ -80,7 +85,7 @@
     </span>
   </div>
   <p>* Campo obrigatório</p>
-  <button type="submit" [disabled]="!form.valid">Salvar</button>
+  <button type="submit" [disabled]="!form.valid">Cadastrar</button>
 </form>
 
 <div><a [routerLink]="['']">Voltar</a></div>

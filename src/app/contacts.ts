@@ -23,7 +23,7 @@ export const fictionalContacts = [
     complement: 'Apto. 120',
     neighborhood: 'Centro',
     city: 'São Paulo',
-    state: 'São Paulo',
+    state: 'SP',
     cep: '123456000',
   },
   {
@@ -34,8 +34,8 @@ export const fictionalContacts = [
     adress: 'Rua das Flores',
     number: 1123,
     neighborhood: 'Vila Teixeira',
-    city: 'Campinas',
-    state: 'São Paulo',
+    city: 'João Pessoa',
+    state: 'PB',
     cep: '153456012',
   },
   {
@@ -47,8 +47,8 @@ export const fictionalContacts = [
     number: 245,
     complement: 'Apto. 152',
     neighborhood: 'Santa Lúcia',
-    city: 'Jundiaí',
-    state: 'São Paulo',
+    city: 'Curitiba',
+    state: 'PR',
     cep: '19456130',
   },
 ];
