@@ -33,10 +33,11 @@ export const fictionalContacts = [
     phone: '19123456789',
     adress: 'Rua das Flores',
     number: 1123,
+    complement: '',
     neighborhood: 'Vila Teixeira',
     city: 'João Pessoa',
     state: 'PB',
-    cep: '153456012',
+    cep: '15345601',
   },
   {
     id: '_ewqhhhh',
