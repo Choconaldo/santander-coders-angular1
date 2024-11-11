@@ -6,6 +6,11 @@
   margin: 15px 0;
 }
 
+.filter {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 .card {
   min-width: 360px;
   border: 2px solid black;

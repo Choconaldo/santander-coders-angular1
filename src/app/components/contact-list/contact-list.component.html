@@ -1,5 +1,9 @@
 <div class="container">
-  <div *ngFor="let contact of contacts">
+  <label class="filter"
+    >Filtar por nome: <input (input)="searchByName($event)" type="text"
+  /></label>
+
+  <div *ngFor="let contact of filteredContacts">
     <div class="card">
       <h3>{{ contact.name }}</h3>
       <div class="card-content">

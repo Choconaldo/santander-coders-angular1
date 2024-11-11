@@ -4,6 +4,7 @@ import { PhonePipe } from '../../pipes/phone.pipe';
 import { RouterLink } from '@angular/router';
 import { LocalStorageService } from '../../utils/local-storage.service';
 import { fictionalContacts } from '../../contacts';
+import { Contact } from '../../models/contact';
 
 @Component({
   selector: 'app-contact-list',
@@ -15,6 +16,7 @@ import { fictionalContacts } from '../../contacts';
 export class ContactListComponent {
   localStorageService = inject(LocalStorageService);
   contacts = this.localStorageService.loadContactsList();
+  filteredContacts = this.contacts;
   reloadComponent = true;
 
   deleteContact(id: string) {
@@ -25,5 +27,11 @@ export class ContactListComponent {
   addFictionalContacts() {
     localStorage.setItem('contacts', JSON.stringify(fictionalContacts));
     window.location.reload();
+  }
+  searchByName(event: any) {
+    let input: string = event.target.value;
+    this.filteredContacts = this.contacts.filter((contact: Contact) => {
+      return contact.name.includes(input);
+    });
   }
 }
