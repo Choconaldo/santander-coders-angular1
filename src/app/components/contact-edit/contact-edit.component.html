@@ -1,86 +1,124 @@
-<h2>Cadastrar novo contato</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label
-      >Nome:* <input type="text" name="name" formControlName="name"
-    /></label>
-    <span *ngIf="name!.invalid" class="alert">
-      <span *ngIf="name!.errors?.['required']"> Campo obrigatório</span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >E-mail:* <input type="text" name="email" formControlName="email"
-    /></label>
-    <span *ngIf="email!.invalid" class="alert">
-      <span *ngIf="email!.errors?.['required']"> Campo obrigatório </span>
-      <span *ngIf="email!.errors?.['email']"> Formato incorreto </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >Telefone:* <input type="text" name="phone" formControlName="phone"
-    /></label>
-    <span *ngIf="phone!.invalid" class="alert">
-      <span *ngIf="phone!.errors?.['required']"> Campo obrigatório </span>
-      <span *ngIf="phone!.errors?.['pattern']"> Apenas números </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >Endereço:* <input type="text" name="adress" formControlName="adress"
-    /></label>
-    <span *ngIf="adress!.invalid" class="alert">
-      <span *ngIf="adress!.errors?.['required']"> Campo obrigatório </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >Número: <input type="text" name="number" formControlName="number"
-    /></label>
-  </div>
-  <div class="form-group">
-    <label
-      >Complemento:
-      <input type="text" name="complement" formControlName="complement"
-    /></label>
-  </div>
-  <div class="form-group">
-    <label
-      >Bairro:*
-      <input type="text" name="neighborhood" formControlName="neighborhood"
-    /></label>
-    <span *ngIf="neighborhood!.invalid" class="alert">
-      <span *ngIf="neighborhood!.errors?.['required']">
-        Campo obrigatório
+<div class="container">
+  <h2>Cadastrar novo contato</h2>
+  <form class="card" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="card-fields"
+        >Nome: *
+        <input size="23" type="text" name="name" formControlName="name"
+      /></label>
+      <span *ngIf="name!.invalid" class="alert">
+        <span class="required" *ngIf="name!.errors?.['required']">
+          Campo obrigatório</span
+        >
       </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >Cidade:* <input type="text" name="city" formControlName="city"
-    /></label>
-    <span *ngIf="city!.invalid" class="alert">
-      <span *ngIf="city!.errors?.['required']"> Campo obrigatório </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label
-      >Estado:* <input type="text" name="state" formControlName="state"
-    /></label>
-    <span *ngIf="state!.invalid" class="alert">
-      <span *ngIf="state!.errors?.['required']"> Campo obrigatório </span>
-    </span>
-  </div>
-  <div class="form-group">
-    <label>CEP:* <input type="text" name="cep" formControlName="cep" /></label>
-    <span *ngIf="cep!.invalid" class="alert">
-      <span *ngIf="cep!.errors?.['required']"> Campo obrigatório </span>
-      <span *ngIf="cep!.errors?.['pattern']"> Apenas números </span>
-    </span>
-  </div>
-  <p>* Campo obrigatório</p>
-  <button type="submit" [disabled]="!form.valid">Atualizar</button>
-</form>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >E-mail: *
+        <input size="22" type="text" name="email" formControlName="email"
+      /></label>
+      <span *ngIf="email!.invalid" class="alert">
+        <span class="required" *ngIf="email!.errors?.['required']">
+          Campo obrigatório
+        </span>
+        <span class="required" *ngIf="email!.errors?.['email']">
+          Formato incorreto
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Telefone: *
+        <input size="11" type="text" name="phone" formControlName="phone"
+      /></label>
+      <span *ngIf="phone!.invalid" class="alert">
+        <span class="required" *ngIf="phone!.errors?.['required']">
+          Campo obrigatório
+        </span>
+        <span class="required" *ngIf="phone!.errors?.['pattern']">
+          Apenas números
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Endereço: * <input type="text" name="adress" formControlName="adress"
+      /></label>
+      <span *ngIf="adress!.invalid" class="alert">
+        <span class="required" *ngIf="adress!.errors?.['required']">
+          Campo obrigatório
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Número:
+        <input size="3" type="text" name="number" formControlName="number"
+      /></label>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Complemento:
+        <input type="text" name="complement" formControlName="complement"
+      /></label>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Bairro: *
+        <input type="text" name="neighborhood" formControlName="neighborhood"
+      /></label>
+      <span *ngIf="neighborhood!.invalid" class="alert">
+        <span class="required" *ngIf="neighborhood!.errors?.['required']">
+          Campo obrigatório
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >Cidade: * <input type="text" name="city" formControlName="city"
+      /></label>
+      <span *ngIf="city!.invalid" class="alert">
+        <span class="required" *ngIf="city!.errors?.['required']">
+          Campo obrigatório
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >UF: *
+        <select type="text" name="state" formControlName="state">
+          <option *ngFor="let state of states" value="{{ state }}">
+            {{ state }}
+          </option>
+        </select></label
+      >
+      <span *ngIf="state!.invalid" class="alert">
+        <span class="required" *ngIf="state!.errors?.['required']">
+          Campo obrigatório
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="card-fields"
+        >CEP: * <input size="8" type="text" name="cep" formControlName="cep"
+      /></label>
+      <span *ngIf="cep!.invalid" class="alert">
+        <span class="required" *ngIf="cep!.errors?.['required']">
+          Campo obrigatório
+        </span>
+        <span class="required" *ngIf="cep!.errors?.['pattern']">
+          Apenas números
+        </span>
+        <span class="required" *ngIf="cep!.errors?.['maxlength']">
+          Formato incorreto
+        </span>
+      </span>
+    </div>
+    <p>* Campo obrigatório</p>
+    <button class="button-15" type="submit" [disabled]="!form.valid">
+      Salvar alterações
+    </button>
+  </form>
 
-<div><a [routerLink]="['']">Voltar</a></div>
+  <div><a [routerLink]="['']">Voltar</a></div>
+</div>

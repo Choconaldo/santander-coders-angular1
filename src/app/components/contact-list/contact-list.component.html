@@ -23,4 +23,9 @@
   <div>
     <a class="page-link" [routerLink]="['/add']">Cadastrar novo contato</a>
   </div>
+  <div *ngIf="contacts.length == 0">
+    <button class="button-15" (click)="addFictionalContacts()">
+      Cadastrar Contatos Fictícios
+    </button>
+  </div>
 </div>

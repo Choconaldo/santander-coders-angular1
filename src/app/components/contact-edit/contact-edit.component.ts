@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
   FormControl,
@@ -13,12 +13,42 @@ import { Contact } from '../../contacts';
 @Component({
   selector: 'app-contact-edit',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, RouterLink],
+  imports: [ReactiveFormsModule, NgIf, RouterLink, NgFor],
   templateUrl: './contact-edit.component.html',
   styleUrl: './contact-edit.component.css',
 })
 export class ContactEditComponent {
   constructor(private _router: Router, private route: ActivatedRoute) {}
+
+  states = [
+    'AC',
+    'AL',
+    'AP',
+    'AM',
+    'BA',
+    'CE',
+    'DF',
+    'ES',
+    'GO',
+    'MA',
+    'MT',
+    'MS',
+    'MG',
+    'PA',
+    'PB',
+    'PR',
+    'PE',
+    'PI',
+    'RJ',
+    'RN',
+    'RS',
+    'RO',
+    'RR',
+    'SC',
+    'SP',
+    'SE',
+    'TO',
+  ];
 
   localStorageService = inject(LocalStorageService);
   contactIdFromRoute!: string;
@@ -42,6 +72,7 @@ export class ContactEditComponent {
       cep: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[0-9]*$'),
+        Validators.maxLength(8),
       ]),
     });
 

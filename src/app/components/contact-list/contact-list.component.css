@@ -81,11 +81,6 @@ a:visited {
   color: blue;
 }
 
-a:hover {
-  transition-duration: 0.4s, 0.2s;
-  transform: scale(110%);
-}
-
 .page-link {
   font-size: 1.3rem;
 }

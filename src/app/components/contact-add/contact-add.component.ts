@@ -69,6 +69,7 @@ export class ContactAddComponent {
       cep: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[0-9]*$'),
+        Validators.maxLength(8),
       ]),
     });
     this.form.setValue({
